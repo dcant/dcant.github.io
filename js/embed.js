@@ -15,7 +15,7 @@ function(e, t, s) {
     //管理员判断开始
     function sskadmin(e) {
         var ssk = '';
-        if (e.user_id == 867394) {
+        if (e.user_id == 6298294082347205377) {
             if (checkMobile()) {
                 ssk = '<span class="ua"><span class="sskadmin">R00T</span></span><br><br>';
             } else {
