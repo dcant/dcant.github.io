@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Linux上删除程序已打开的文件 | Talk is cheap, but I need it.</title><link rel="stylesheet" type="text/css" href="/css/normalize.css"><link rel="stylesheet" type="text/css" href="/css/highlight.css"><link rel="stylesheet" type="text/css" href="/css/very-simple.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"></head><body><!-- include the sidebar--><!-- include ./includes/sidebar.jade--><!-- Blog title and subtitle--><header><div class="container header"><a id="logo" href="/." class="title">Talk is cheap, but I need it.</a><span class="subtitle">dcant</span><label id="toggle-menu" for="menu" onclick><i class="fa fa-bars"></i></label></div></header><!-- use checkbox hack for toggle nav-bar on small screens--><input id="menu" type="checkbox"><!-- Navigation Links--><nav id="nav"><div class="container"><a href="/" class="sidebar-nav-item active">主页</a><a href="/archives" class="sidebar-nav-item">归档</a><a href="/about" class="sidebar-nav-item">简录</a></div></nav><div id="header-margin-bar"></div><!-- gallery that comes before the header--><div class="wrapper"><div class="container post-header"><h1>Linux上删除程序已打开的文件</h1></div></div><div class="wrapper"><div class="container meta"><div class="post-time">2016-08-30</div><div class="post-tags"><a class="post-tag-link" href="/tags/Linux/">Linux</a></div></div></div><article><div class="container post"><blockquote>
+<p>在Linux系统中，如果删除或移动一个已经在程序中被打开的文件会发生什么？  </p>
+</blockquote>
+<p><b>被移动</b><br>如果文件被移动（同文件系统中），则文件句柄保持打开和可用状态，并且仍然能够读写该文件。  </p>
+<p><b>被删除</b><br>如果文件被删除，则文件句柄仍然保持打开和可用状态，此时文件并非真正的被删除，只有最后一个文件句柄关闭时才会删除该文件。  </p>
+<p><b>被替换</b><br>如果文件被替换，则取决于以何种方式替换：覆盖方式，则文件句柄依旧有效并访问新文件；unlink再新建文件的方式则效果等同于删除。  </p>
+<p><a href="http://stackoverflow.com/questions/2028874/what-happens-to-an-open-file-handler-on-linux-if-the-pointed-file-gets-moved-de" title="stackoverflow问答" target="_blank" rel="external">stackoverflow</a>  </p>
+</div><!-- comment system--><div class="container"><hr><div data-thread-key="2016/08/30/20160830/" data-title="Linux上删除程序已打开的文件" data-url="https://dcant.github.io/2016/08/30/20160830/" class="ds-thread"></div><script>var duoshuoQuery = {short_name:'dcant'};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script></div></article><footer id="footer"><div class="container"><div class="bar"><div class="social"><a href="http://weibo.com/twtlove" target="_blank"><i class="fa fa-weibo"></i></a><a href="https://github.com/dcant" target="_blank"><i class="fa fa-github"></i></a></div><div class="footer">© 2016 <a href="/" rel="nofollow">Talk is cheap, but I need it.</a>. Powered by <a rel="nofollow" target="_blank" href="https://hexo.io">Hexo</a>. Theme <a target="_blank" href="https://github.com/lotabout/very-simple">very-simple</a>.</div></div></div></footer><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.css"><script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script>$(document).ready(function() {
+    $(".fancybox").fancybox();
+});
+</script></body></html>
